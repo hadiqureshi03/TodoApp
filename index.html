@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ToDo App</h1>
+
+     <!-- Formular -->
+        <form id="todo-form">
+            <input type="text" id="task-input" placeholder="Hvad skal gøres?" required>
+
+            <button type="submit">Tilføj</button>
+        </form>
+
+    <!-- To do liste  -->
+        <section>
+            <h2>ToDo</h2>
+            <ul id="todo-list"></ul>
+        </section>
+
+        <!-- Færdig liste -->
+        <section>
+            <h2>Færdig</h2>
+            <ul id="done-list"></ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
