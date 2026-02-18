@@ -4,6 +4,7 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 // DOM
 const form = document.getElementById("todo-form");
 const taskInput = document.getElementById("task-input");
+const antalInput = document.getElementById("antal-input");
 
 const todoList = document.getElementById("todo-list");
 const doneList = document.getElementById("done-list");
@@ -29,7 +30,7 @@ function render() {
         // Task 
         const info = document.createElement("span");
         info.className = "task-info";
-        info.textContent = task.text;
+        info.textContent = task.text + " (Antal: " + task.antal + ")";
 
         // Knapper
         const actions = document.createElement("div");
@@ -87,10 +88,12 @@ form.addEventListener("submit", function (e) {
     const text = taskInput.value.trim();
     if (!text) return;
 
+    const antal = parseInt(antalInput.value) || 1;
+
     const newTask = {
         id: createId(),
         text: text,
-
+        antal: antal,
         done: false
     };
 
@@ -99,6 +102,7 @@ form.addEventListener("submit", function (e) {
     render();
 
     taskInput.value = "";
+    antalInput.value = "1";
     taskInput.focus();
 });
 

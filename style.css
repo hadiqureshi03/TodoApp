@@ -35,11 +35,15 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #e0e0e0;
     color: #333333;
 }
 
 h2 {
     margin: 24px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e0e0e0;
     font-size: 1.1rem;
     color: #555;
 }
@@ -54,7 +58,7 @@ h2 {
     flex: 1;
 }
 
-#quantity-input {
+#antal-input {
     width: 80px;
 }
 
@@ -92,6 +96,7 @@ li {
     border-radius: 8px;
     margin-bottom: 6px;
     background: #f9f9f9;
+    border-bottom: 1px solid #ebebeb;
     transition: background 0.2s;
 }
 
@@ -139,4 +144,48 @@ li:hover {
 
 .actions button:hover {
     opacity: 0.85;
+}
+
+/* Responsivt design */
+@media (max-width: 500px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    #todo-form {
+        flex-wrap: wrap;
+    }
+
+    #task-input {
+        flex: 1 1 100%;
+    }
+
+    #antal-input {
+        flex: 1;
+    }
+
+    #todo-form button {
+        flex: 1;
+    }
+
+    li {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .task-info {
+        flex: 1 1 100%;
+    }
+
+    .actions {
+        width: 100%;
+    }
+
+    .actions button {
+        flex: 1;
+    }
 }
